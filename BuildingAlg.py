@@ -12,13 +12,6 @@ class Building:
         self.value = 0
         self.isSeen = False
 
-    def showStat(self):
-        print('-------------')
-        print('Building name: ' + self.name)
-        print(self.value)
-        print(self.isSeen)
-        print('-------------')
-
     def __str__(self):
         response = f'------------\n'\
             'Building Name = {}\n'\
@@ -36,6 +29,7 @@ def buildingAlg(buildingList):
     """
     pass
 
+
 def createBuildings():
     """
     generates a sample of buildings
@@ -47,6 +41,7 @@ def createBuildings():
     e = Building('e')
     buildings = [a, b, c, d, e]
     return buildings
+
 
 if __name__ == "__main__":
     buildingsList = createBuildings()
