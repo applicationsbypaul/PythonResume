@@ -27,7 +27,14 @@ def buildingAlg(buildingList):
     The algorith to see if 
     the sun can see the buildings
     """
-    pass
+    print(len(buildingsList))
+
+def changeBuilding(building, value, buildingList):
+    """
+    Changes the building height of
+    a building. building will be an int
+    """
+    buildingList[building].value = value
 
 
 def createBuildings():
@@ -45,5 +52,8 @@ def createBuildings():
 
 if __name__ == "__main__":
     buildingsList = createBuildings()
+    for building in buildingsList:
+        print(building)
+    changeBuilding(1,1,buildingsList)
     for building in buildingsList:
         print(building)
