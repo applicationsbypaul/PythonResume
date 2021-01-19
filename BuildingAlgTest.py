@@ -31,6 +31,25 @@ class Test_TestBuildingAlg(unittest.TestCase):
         self.assertEqual(self.buildingsList[2].isSeen, False)
         self.assertEqual(self.buildingsList[3].isSeen, False)
         self.assertEqual(self.buildingsList[4].isSeen, False)
+    def test_alg_mutipleChanges(self):
+        BuildingAlg.changeBuilding(1,2, self.buildingsList)
+        BuildingAlg.changeBuilding(4,7, self.buildingsList)
+        BuildingAlg.changeBuilding(2,4, self.buildingsList)
+        self.assertEqual(self.buildingsList[0].isSeen, False)
+        self.assertEqual(self.buildingsList[1].isSeen, True)
+        self.assertEqual(self.buildingsList[2].isSeen, True)
+        self.assertEqual(self.buildingsList[3].isSeen, False)
+        self.assertEqual(self.buildingsList[4].isSeen, True)
+    
+    def test_alg_mutipleChanges2(self):
+        BuildingAlg.changeBuilding(1,2, self.buildingsList)
+        BuildingAlg.changeBuilding(4,7, self.buildingsList)
+        BuildingAlg.changeBuilding(2,1, self.buildingsList)
+        self.assertEqual(self.buildingsList[0].isSeen, False)
+        self.assertEqual(self.buildingsList[1].isSeen, True)
+        self.assertEqual(self.buildingsList[2].isSeen, False)
+        self.assertEqual(self.buildingsList[3].isSeen, False)
+        self.assertEqual(self.buildingsList[4].isSeen, True)
 
 
 if __name__ == "__main__":
