@@ -27,7 +27,23 @@ def buildingAlg(buildingList):
     The algorith to see if 
     the sun can see the buildings
     """
-    print(len(buildingsList))
+    #step one interate through from the end to the start.
+
+    for index in range(len(buildingList)):
+        ## first check the first value we will see if it is greater than 0 
+        # making it seen first
+        if index == 0:
+            if buildingList[index].value == 0:
+                buildingList[index].isSeen = False
+                continue
+        #checking now to see anything after the first index
+        if buildingList[index].value > 0:
+            current = buildingList[index].value
+            previous = buildingList[index - 1].value
+            if current > previous:
+                buildingList[index].isSeen = True
+        else:
+            building.isSeen = False
 
 def changeBuilding(building, value, buildingList):
     """
@@ -35,6 +51,7 @@ def changeBuilding(building, value, buildingList):
     a building. building will be an int
     """
     buildingList[building].value = value
+    buildingAlg(buildingList)
 
 
 def createBuildings():
@@ -52,8 +69,7 @@ def createBuildings():
 
 if __name__ == "__main__":
     buildingsList = createBuildings()
-    for building in buildingsList:
-        print(building)
     changeBuilding(1,1,buildingsList)
-    for building in buildingsList:
-        print(building)
+    
+
+    
