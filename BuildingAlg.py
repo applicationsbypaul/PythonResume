@@ -27,10 +27,10 @@ def buildingAlg(buildingList):
     The algorith to see if 
     the sun can see the buildings
     """
-    #step one interate through from the end to the start.
+    # step one iterate through from the end to the start.
     highestBuilding = 0
     for index in range(len(buildingList)):
-        ## first check the first value we will see if it is greater than 0 
+        # first check the first value we will see if it is greater than 0
         # making it seen first
         # i need a marker for biggest value
         if index == 0:
@@ -41,10 +41,10 @@ def buildingAlg(buildingList):
                 buildingList[index].isSeen = True
                 highestBuilding = buildingList[index].value
                 continue
-        #checking now to see anything after the first index
+        # checking now to see anything after the first index
         # confirm that its bigger than 0 if not make it not seen
         if buildingList[index].value > 0:
-            #gather data to compare easier
+            # gather data to compare easier
             current = buildingList[index].value
             previous = buildingList[index - 1].value
             if current > previous and current > highestBuilding:
@@ -54,6 +54,7 @@ def buildingAlg(buildingList):
                 buildingList[index].isSeen = False
         else:
             buildingList[index].isSeen = False
+
 
 def changeBuilding(building, value, buildingList):
     """
@@ -78,7 +79,4 @@ def createBuildings():
 
 
 if __name__ == "__main__":
-   pass
-
-
-    
+    pass
