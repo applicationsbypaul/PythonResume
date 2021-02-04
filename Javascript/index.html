@@ -8,8 +8,12 @@
 
     </script>
 </head>
-<body>
+<body onload="createBuilding()">
     <button onclick="createBuildings()">CreateBuldings</button>
+    <form>
+        <input type="text" id="building1">
+        <input type="submit" onclick="changeBuilding(0,1)">
+    </form>
     
 </body>
 </html>

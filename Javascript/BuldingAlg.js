@@ -9,7 +9,9 @@ class Building {
     }
 };
 
- var buildings = [];
+function createBuilding() {
+    var buildings = [];
+}
 /**
  * This function will create the buildings and put them
  * in an array to be examined.
@@ -23,11 +25,18 @@ function createBuildings() {
     let buildingE = new Building("E");
 
    buildings.push(buildingA,buildingB,
-    buildingC,buildingD,buildingE)
-    buildingAlg()
+    buildingC,buildingD,buildingE);
 }
 
+function changeBuilding(building, newValue) {
+    buildings[building].value = newValue;
+    buildingAlg();
+}
+
+
 function buildingAlg() {
+    // Created a highest building to keep track
+
     let highestBuilding = 0;
     for (let index = 0; index < buildings.length; index++) {
         if (index == 0){
